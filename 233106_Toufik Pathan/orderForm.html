@@ -1,0 +1,155 @@
+<html>
+    <head>
+        <h1 align="center">Order Form</h1>
+        <script>
+            function validate()
+            {
+                var fflag=valFName();
+                var lflag=valLName();
+                var l1=valALine1();
+                var l2=valALine2();
+                var cflag=valCity();
+                var pflag=valPin();
+                
+                if(fflag&&lflag&&l1&&l2&&cflag&&pflag)
+                {
+                    document.getElementById("mydiv").innerHTML="Order submitted successfully";
+                }
+            }
+
+            function valFName(){
+
+                var name=document.getElementById("nm").value;
+                if(name===""||!isNaN(name))
+                {
+                  document.getElementById("name").innerHTML="Name field can not be empty or number";
+                  return false;
+                }
+                else
+                {
+                    document.getElementById("name").innerHTML="";  
+                    return true;
+                }
+            }
+            function valLName(){
+
+                var name=document.getElementById("nm1").value;
+                if(name===""||!isNaN(name))
+                {
+                  document.getElementById("lname").innerHTML="Name field can not be empty or number";
+                  return false;
+                }
+                else
+                {
+                    document.getElementById("lname").innerHTML="";  
+                    return true;
+                }
+            } 
+
+            function valALine1()
+            {
+                var ad=document.getElementById("line1").value;
+                //var ad2=document.getElementById("line2").value;
+                if(ad==="")
+                {
+                    document.getElementById("l1").innerHTML="can not empty";
+                    return false;
+                }
+                else{
+                    document.getElementById("l1").innerHTML="";
+                    return true; 
+                }
+            }
+
+            function valALine2()
+            {
+                //var ad=document.getElementById("line1").value;
+                var ad2=document.getElementById("line2").value;
+                if(ad2==="")
+                {
+                    document.getElementById("l2").innerHTML="can not empty";
+                    return false;
+                }
+                else{
+                    document.getElementById("l2").innerHTML="";
+                    return true; 
+                }
+            }
+
+            function valCity()
+            {
+                var city=document.getElementById("city").value;
+                if(city==="")
+                {
+                    document.getElementById("cit").innerHTML="can not empty";
+                    return false;
+                }
+                else{
+                    document.getElementById("cit").innerHTML="";
+                    return true;
+                }
+            }
+
+            function valPin()
+            {
+                var pin=document.getElementById("pin").value;
+                if(pin===""||isNaN(pin))
+                {
+                    document.getElementById("pn").innerHTML="its should be number only";
+                    return false;
+                }
+                else{
+                    document.getElementById("pn").innerHTML="";
+                    return true;
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <form>
+       
+            
+            <h2>Delivery Details</Details></h2>
+            <h6 style="color: red;">All fields are mandetory*</h6>
+            <h4>Full Name:</h4>
+            First Name:<input type="text"  name="nm" id="nm"/><span name="name" id="name" style="color:red">*</span>
+            &nbsp;&nbsp;
+            Last Name:<input type="text" name="nm1" id="nm1"><span name="lname" id="lname" style="color:red">*</span>
+            <h4>Adress:</h4>
+            Street Adress Line 1:
+            <input type="text" name="line1" id="line1"><span name="l1" id="l1" style="color:red">*</span><br><br>
+            Street Adress Line 2:
+            <input type="text" name="line2" id="line2"><span name="l2" id="l2" style="color:red">*</span><br><br>
+             City:
+            <input type="text" name="city" id="city"><span id="cit" style="color:red">*</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            State/Province:
+            <select type="text" id="states" >
+               
+                <option name="state" id="state">Maharashtra</option>
+                <option name="state" id="state">Gujarat</option>
+                <option name="state" id="state">UP</option>
+                <option name="state" id="state">Keral</option>
+            </select><span id="stat" style="color:red">*</span><br><br>
+            PinCode/ZipCode:
+            <input type="text" name="pin" id="pin"> <span id="pn" style="color:red">*</span> &nbsp;&nbsp;
+            Country:
+            <select type="text"  name="country" id="country">
+                
+                <option name="o1" id="o1">India</option>
+                </select><br><br>
+            Phone Number:
+            <input type="text" name="phone" id="phone"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            Email:
+            <input type="email" name="email" id="email">
+            <br><br>
+            <button type="button" name="btn" id="btn" onclick="validate()" align="center">Submit</button>
+            
+        </form>
+
+        <div id="mydiv">
+
+        </div>
+    
+    </body>
+</html>
